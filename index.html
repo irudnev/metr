@@ -103,14 +103,13 @@
 		}
 
 		function start_metr() {
-			beep();
-			timerId = setTimeout(start_metr, 60 * 1000 / output.innerHTML );
+			timerId = setInterval(beep, 60 * 1000 / output.innerHTML );
 			metr_run = true;
 			btn_play.innerText = "Stop";
 		}
 
 		function stop_metr() {
-			clearTimeout(timerId);
+			clearInterval(timerId);
 			metr_run = false;
 			btn_play.innerText = "Start";
 		}
